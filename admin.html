@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin</title><link rel="stylesheet" href="css/neo.css"></head>
+<body data-role="Admin">
+<header class="top"><h1>Admin</h1><div class="bar" style="margin:0">
+<a class="btn primary" href="assistant.html?as=Admin" target="_blank" rel="noopener">Open Room Assistant Interface</a>
+<a class="btn primary" href="housekeeper.html?as=Admin" target="_blank" rel="noopener">Open Housekeeper Interface</a></div></header>
+<main><section id="summary" class="stats"></section>
+<section class="panel"><h2>Room Management</h2><div class="bar"><span id="toolbar" class="bar" style="margin:0"></span><button class="btn primary" id="add">Add Room</button></div>
+<div class="tw"><table><thead><tr><th>Room</th><th>Type</th><th>Status</th><th>Availability</th><th>Actions</th></tr></thead>
+<tbody id="rows"><tr><td colspan="5" class="msg">Loading rooms…</td></tr></tbody></table></div></section></main>
+<dialog id="rd"><form id="rf"><h2 id="rt">Add Room</h2>
+<label>Room number<input id="rn" required maxlength="10"></label>
+<label>Room type<select id="rty"><option>Standard</option><option>Deluxe</option><option>Suite</option></select></label>
+<label>Service status<select id="rsv"><option>In Service</option><option>Out of Service</option></select></label>
+<div class="row"><button type="button" class="btn" id="rc">Cancel</button><button class="btn primary">Save</button></div></form></dialog>
+<script src="js/common.js"></script>
+<script>
+let rooms = [], editing = null;
+function draw() {
+  const l = filtered(rooms);
+  $('#rows').innerHTML = l.length ? l.map(r => `<tr><td><b>${esc(r.roomNumber)}</b></td><td>${esc(r.roomType)}</td><td>${badge(r.status)}</td><td>${esc(r.availability)}</td>
+    <td><button class="btn sm" data-a="edit" data-r="${esc(r.roomNumber)}">Edit</button><button class="btn sm danger" data-a="del" data-r="${esc(r.roomNumber)}">Remove</button></td></tr>`).join('') : msgRow(5, 'No rooms match your search.');
+}
+function openForm(r) {
+  editing = r ? r.roomNumber : null; $('#rt').textContent = r ? 'Edit Room' : 'Add Room';
+  $('#rn').value = r?.roomNumber || ''; $('#rty').value = r?.roomType || 'Standard'; $('#rsv').value = r?.serviceStatus || 'In Service'; $('#rd').showModal();
+}
+$('#add').onclick = () => openForm(); $('#rc').onclick = () => $('#rd').close();
+$('#rows').onclick = async e => {
+  const b = e.target.closest('button'); if (!b) return; const n = b.dataset.r;
+  if (b.dataset.a === 'edit') return openForm(rooms.find(r => r.roomNumber === n));
+  if (!await confirmBox(`Remove room ${n}? This cannot be undone.`)) return;
+  try { await api('/rooms/' + encodeURIComponent(n), { method: 'DELETE' }); toast(`Room ${n} removed.`); load(); } catch (x) { toast(x.message, true); }
+};
+$('#rf').onsubmit = async e => {
+  e.preventDefault();
+  const body = { roomNumber: $('#rn').value, roomType: $('#rty').value, serviceStatus: $('#rsv').value };
+  try { await api(editing ? '/rooms/' + encodeURIComponent(editing) : '/rooms', { method: editing ? 'PUT' : 'POST', body });
+    $('#rd').close(); toast(editing ? 'Room updated.' : 'Room added.'); load(); } catch (x) { toast(x.message, true); }
+};
+async function load() {
+  try { rooms = await api('/rooms'); } catch (x) { $('#rows').innerHTML = msgRow(5, x.message, true); return; }
+  summary(rooms); draw();
+}
+initShell(draw); load(); setInterval(load, 20000);
+</script></body></html>

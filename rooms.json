@@ -1,0 +1,182 @@
+[
+ {
+  "roomNumber": "101",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:10:00",
+  "availability": "Available"
+ },
+ {
+  "roomNumber": "102",
+  "roomType": "Standard",
+  "occupancyStatus": "Occupied",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:11:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "103",
+  "roomType": "Deluxe",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Dirty",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:12:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "104",
+  "roomType": "Suite",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:13:00",
+  "availability": "Available"
+ },
+ {
+  "roomNumber": "105",
+  "roomType": "Standard",
+  "occupancyStatus": "Occupied",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:14:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "106",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Cleaning",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:15:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "107",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:16:00",
+  "availability": "Available"
+ },
+ {
+  "roomNumber": "108",
+  "roomType": "Deluxe",
+  "occupancyStatus": "Occupied",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:17:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "109",
+  "roomType": "Suite",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Dirty",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:18:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "110",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "Out of Service",
+  "lastUpdated": "2026-10-18T09:19:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "201",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:20:00",
+  "availability": "Available"
+ },
+ {
+  "roomNumber": "202",
+  "roomType": "Standard",
+  "occupancyStatus": "Occupied",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:21:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "203",
+  "roomType": "Deluxe",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Dirty",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:22:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "204",
+  "roomType": "Suite",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:23:00",
+  "availability": "Available"
+ },
+ {
+  "roomNumber": "205",
+  "roomType": "Standard",
+  "occupancyStatus": "Occupied",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:24:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "206",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Cleaning",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:25:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "207",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:26:00",
+  "availability": "Available"
+ },
+ {
+  "roomNumber": "208",
+  "roomType": "Deluxe",
+  "occupancyStatus": "Occupied",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:27:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "209",
+  "roomType": "Suite",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Dirty",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T08:28:00",
+  "availability": "Unavailable"
+ },
+ {
+  "roomNumber": "210",
+  "roomType": "Standard",
+  "occupancyStatus": "Vacant",
+  "housekeepingStatus": "Clean",
+  "serviceStatus": "In Service",
+  "lastUpdated": "2026-10-18T09:29:00",
+  "availability": "Available"
+ }
+]

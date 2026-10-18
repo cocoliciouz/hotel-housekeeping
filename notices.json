@@ -1,0 +1,18 @@
+[
+ {
+  "id": 1,
+  "roomNumber": "103",
+  "message": "Guest returned the room key. Cleaning required.",
+  "status": "Pending",
+  "createdBy": "Room Assistant",
+  "createdAt": "2026-10-18T10:30:00"
+ },
+ {
+  "id": 2,
+  "roomNumber": "109",
+  "message": "Late checkout completed. Please clean.",
+  "status": "Acknowledged",
+  "createdBy": "Room Assistant",
+  "createdAt": "2026-10-18T09:50:00"
+ }
+]

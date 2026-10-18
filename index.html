@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Room Availability</title><link rel="stylesheet" href="css/neo.css"></head>
+<body data-role="">
+<header class="top"><h1>Room Availability</h1><span class="role">Live room status (read-only)</span></header>
+<main><section id="summary" class="stats"></section>
+<section class="panel"><div id="toolbar" class="bar"></div><div id="list" class="grid"><p class="msg">Loading rooms…</p></div></section></main>
+<script src="js/common.js"></script>
+<script>
+let rooms = [];
+function draw() {
+  const l = filtered(rooms);
+  $('#list').innerHTML = l.length ? l.map(r => `<div class="card"><b>Room ${esc(r.roomNumber)}</b><span>${esc(r.roomType)}</span>${badge(r.status)}<span>${esc(r.availability)}</span></div>`).join('')
+    : '<p class="msg">No rooms match your search.</p>';
+}
+async function load() {
+  try { const r = await fetch('/api/public/rooms'); if (!r.ok) throw 0; rooms = await r.json(); summary(rooms); draw(); }
+  catch { $('#list').innerHTML = '<p class="msg error">Could not load rooms. Please try again.</p>'; }
+}
+initShell(draw); load(); setInterval(load, 20000);
+</script></body></html>
